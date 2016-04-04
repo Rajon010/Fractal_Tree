@@ -107,7 +107,6 @@ class MiddleFirst extends GraphSearchDrawTree {
 	MiddleFirst() {
 		super();
 		frontier = new PriorityQueue<Branch>(1, new branchToMiddle());
-		System.out.println("s");
 	}
 
 	@Override
