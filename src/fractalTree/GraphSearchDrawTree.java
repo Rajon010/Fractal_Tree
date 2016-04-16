@@ -8,8 +8,6 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Stack;
 
-import javax.swing.plaf.basic.BasicInternalFrameTitlePane.MaximizeAction;
-
 import java.util.PriorityQueue;
 
 abstract class GraphSearchDrawTree {
@@ -42,7 +40,7 @@ abstract class GraphSearchDrawTree {
 		for (int i = 1; !frontier.isEmpty(); i++) {
 			Branch b = frontier_pop();
 			int x = b.getX(), y = b.getY(), len = b.getLength(), angle = b.getAngle();
-			Graphics2D gNow = (Graphics2D) g2.create();
+			Graphics2D gNow = (Graphics2D) g2.create(); // create a copy gNow of g2 so that rotating gNow does not effect g2
 			gNow.rotate(-Math.toRadians(angle), x, y);
 			gNow.setStroke(new BasicStroke(len / H_W_RATIO));
 			//g2.setColor(color[(int) (Math.log(lengthLeft / COLOR_INTERVAL))]);
